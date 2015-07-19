@@ -2,6 +2,6 @@
   "name": "TinyGPS++",
   "author": "Mikal Hart",
   "license": "MIT",
-  "version": "0.94b",
+  "version": "0.94",
   "description": "A new, customizable Arduino NMEA parsing library http://arduiniana.org"
 }
