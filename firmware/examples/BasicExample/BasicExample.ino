@@ -1,4 +1,4 @@
-#include <TinyGPS++.h>
+#include <TinyGPS++/TinyGPS++.h>
 /* 
    This sample sketch should be the first you try out when you are testing a TinyGPS++
    (TinyGPSPlus) installation.  In normal use, you feed TinyGPS++ objects characters from

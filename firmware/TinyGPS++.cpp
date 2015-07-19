@@ -31,6 +31,15 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define _GPRMCterm   "GPRMC"
 #define _GPGGAterm   "GPGGA"
 
+// Converts degrees to radians.
+#define radians(angleDegrees) (angleDegrees * M_PI / 180.0)
+ 
+// Converts radians to degrees.
+#define degrees(angleRadians) (angleRadians * 180.0 / M_PI)
+
+#define TWO_PI 6.283185307179586476925286766559
+#define sq(x) ((x)*(x))
+
 TinyGPSPlus::TinyGPSPlus()
   :  parity(0)
   ,  isChecksumTerm(false)
