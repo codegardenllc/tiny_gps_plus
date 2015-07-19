@@ -1,2 +1,3 @@
-# tiny_gps_plus
-TinyGPS++ Library
+# TinyGPS++
+
+TinyGPS++ library for www.particle.com photon and electron.
