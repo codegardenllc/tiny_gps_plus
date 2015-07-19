@@ -1,4 +1,4 @@
-#include <TinyGPS++.h>
+#include <TinyGPS++/TinyGPS++.h>
 #include <SoftwareSerial.h>
 /*
    This sample code demonstrates how to use an array of TinyGPSCustom objects

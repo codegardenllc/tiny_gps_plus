@@ -1,4 +1,4 @@
-#include <TinyGPS++.h>
+#include <TinyGPS++/TinyGPS++.h>
 #include <SoftwareSerial.h>
 /*
    This sample code demonstrates just about every built-in operation of TinyGPS++ (TinyGPSPlus).
