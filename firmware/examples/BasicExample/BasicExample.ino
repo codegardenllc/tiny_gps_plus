@@ -1,5 +1,5 @@
-#include <TinyGPS++/TinyGPS++.h>
-/* 
+#include "TinyGPS++/TinyGPS++.h"
+/*
    This sample sketch should be the first you try out when you are testing a TinyGPS++
    (TinyGPSPlus) installation.  In normal use, you feed TinyGPS++ objects characters from
    a serial NMEA GPS device, but this example uses static strings for simplicity.
@@ -41,7 +41,7 @@ void loop()
 
 void displayInfo()
 {
-  Serial.print(F("Location: ")); 
+  Serial.print(F("Location: "));
   if (gps.location.isValid())
   {
     Serial.print(gps.location.lat(), 6);
