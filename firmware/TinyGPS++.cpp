@@ -374,6 +374,12 @@ double TinyGPSLocation::lng()
    return rawLngData.negative ? -ret : ret;
 }
 
+double TinyGPSLocation::distanceBetween(double lat1, double long1)
+{
+    return TinyGPSPlus::distanceBetween(double lat1, double long1, lat(), lng());
+}
+
+
 void TinyGPSDate::commit()
 {
    date = newDate;
