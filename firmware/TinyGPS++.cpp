@@ -19,10 +19,12 @@ Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+Added Neo-M8N support by Andreas Spiess
+
 */
 
 #include "TinyGPS++.h"
-#include <math.h>
 
 #include <string.h>
 #include <ctype.h>
@@ -30,15 +32,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #define _GPRMCterm   "GPRMC"
 #define _GPGGAterm   "GPGGA"
-
-// Converts degrees to radians.
-#define radians(angleDegrees) ((angleDegrees) * M_PI / 180.0)
- 
-// Converts radians to degrees.
-#define degrees(angleRadians) ((angleRadians) * 180.0 / M_PI)
-
-#define TWO_PI 6.283185307179586476925286766559
-#define sq(x) ((x)*(x))
+#define _GNRMCterm   "GNRMC"
+#define _GNGGAterm   "GNGGA"
 
 TinyGPSPlus::TinyGPSPlus()
   :  parity(0)
@@ -217,9 +212,9 @@ bool TinyGPSPlus::endOfTermHandler()
   // the first term determines the sentence type
   if (curTermNumber == 0)
   {
-    if (!strcmp(term, _GPRMCterm))
+    if (!(strcmp(term, _GPRMCterm) && strcmp(term, _GNRMCterm)))
       curSentenceType = GPS_SENTENCE_GPRMC;
-    else if (!strcmp(term, _GPGGAterm))
+    else if (!(strcmp(term, _GPGGAterm) && strcmp(term, _GNGGAterm)))
       curSentenceType = GPS_SENTENCE_GPGGA;
     else
       curSentenceType = GPS_SENTENCE_OTHER;
